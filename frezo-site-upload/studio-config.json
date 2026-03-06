@@ -1,0 +1,960 @@
+{
+  "version": 1,
+  "updatedAt": "2026-03-06T09:13:19.669Z",
+  "app": {
+    "name": "FREZO",
+    "subtitle": "india's next gen grocery app",
+    "tagline": "no"
+  },
+  "etaBaseMinutes": 7,
+  "categories": [
+    "Fruits & Vegetables",
+    "Beverages",
+    "Pet Supplies",
+    "Medicines & Health Supplies",
+    "flower & gifts",
+    "Dairy & Eggs",
+    "Bakery & Breads",
+    "Staples & Grains",
+    "Rice & Pulses",
+    "Cooking Oil & Spices",
+    "Snacks & Namkeen",
+    "Packaged Foods & Instant Meals",
+    "Frozen Foods & Ice-creams",
+    "Household Essentials",
+    "Personal Care & Hygiene",
+    "Beauty & Grooming",
+    "Baby Care Products",
+    "Supplements & Nutrition",
+    "Stationery & Office Supplies",
+    "Flowers & Gifts",
+    "Electronics & Accessories"
+  ],
+  "topFilters": [
+    {
+      "id": "all",
+      "label": "All",
+      "icon": "A"
+    },
+    {
+      "id": "maxxsaver",
+      "label": "MaxxSaver",
+      "icon": "M"
+    },
+    {
+      "id": "ramzan",
+      "label": "Ramzan",
+      "icon": "R"
+    },
+    {
+      "id": "fresh",
+      "label": "Fresh",
+      "icon": "F"
+    },
+    {
+      "id": "summer",
+      "label": "Summer",
+      "icon": "S"
+    }
+  ],
+  "products": [
+    {
+      "id": "P88399466",
+      "name": "MTR Oats Idli Mix",
+      "category": "Packaged Foods & Instant Meals",
+      "qty": "500g",
+      "price": 148,
+      "mrp": 165,
+      "stock": 12,
+      "rating": "4.5",
+      "tags": [
+        "ready to eat"
+      ],
+      "imageUrl": "https://shop.orklaindia.com/cdn/shop/files/1_10da6e37-a62c-44b1-b2ea-5e53ffa23a4e.png?v=1756199972&width=1000",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#e9eef8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "P35453749",
+      "name": "MTR Coconut Chutney",
+      "category": "Packaged Foods & Instant Meals",
+      "qty": "80g",
+      "price": 47,
+      "mrp": 53,
+      "stock": 11,
+      "rating": "4.5",
+      "tags": [
+        "ready to eat"
+      ],
+      "imageUrl": "https://shop.orklaindia.com/cdn/shop/files/FOP_f693e77c-dee0-4a31-a24e-be04cb3f2432.png?v=1768303248&width=1000",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#e9eef8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "P35191246",
+      "name": "MTR Ready to Eat Chana Masala",
+      "category": "Packaged Foods & Instant Meals",
+      "qty": "300g",
+      "price": 99,
+      "mrp": 111,
+      "stock": 11,
+      "rating": "4.5",
+      "tags": [
+        "all"
+      ],
+      "imageUrl": "",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#e9eef8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "P35077947",
+      "name": "MTR Ready to Eat Dal Makhani",
+      "category": "Packaged Foods & Instant Meals",
+      "qty": "300g",
+      "price": 99,
+      "mrp": 125,
+      "stock": 12,
+      "rating": "4.5",
+      "tags": [
+        "all"
+      ],
+      "imageUrl": "",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#e9eef8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "P34922372",
+      "name": "MTR Ready to Eat Pongal",
+      "category": "Packaged Foods & Instant Meals",
+      "qty": "300g",
+      "price": 91,
+      "mrp": 98,
+      "stock": 13,
+      "rating": "4.5",
+      "tags": [
+        "read to eat"
+      ],
+      "imageUrl": "",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#e9eef8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "P34766149",
+      "name": "Instant poha",
+      "category": "Packaged Foods & Instant Meals",
+      "qty": "150g",
+      "price": 45,
+      "mrp": 39,
+      "stock": 12,
+      "rating": "4.5",
+      "tags": [
+        "instant foods"
+      ],
+      "imageUrl": "",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#e9eef8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "P33998733",
+      "name": "grapes",
+      "category": "Fruits & Vegetables",
+      "qty": "500g",
+      "price": 35,
+      "mrp": 40,
+      "stock": 12,
+      "rating": "4.5",
+      "tags": [
+        "fresh"
+      ],
+      "imageUrl": "",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#e9eef8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "P19449710",
+      "name": "Lay's",
+      "category": "Snacks & Namkeen",
+      "qty": "150g",
+      "price": 18,
+      "mrp": 20,
+      "stock": 34,
+      "rating": "4.5",
+      "tags": [
+        "india's magic masala potato chips"
+      ],
+      "imageUrl": "",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#e9eef8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "P32966340",
+      "name": "bread",
+      "category": "Dairy & Eggs",
+      "qty": "32",
+      "price": 64,
+      "mrp": 78,
+      "stock": 32,
+      "rating": "4.5",
+      "tags": [
+        "all"
+      ],
+      "imageUrl": "",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#e9eef8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "p_milk_1",
+      "name": "Amul Taaza Milk",
+      "category": "Dairy & Eggs",
+      "qty": "1 L",
+      "price": 72,
+      "mrp": 78,
+      "stock": 85,
+      "rating": "4.6",
+      "tags": [
+        "all",
+        "fresh"
+      ],
+      "imageUrl": "",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#e9eef8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "p_banana_1",
+      "name": "Farm Fresh Banana",
+      "category": "Fruits & Vegetables",
+      "qty": "1 dozen",
+      "price": 59,
+      "mrp": 66,
+      "stock": 42,
+      "rating": "4.5",
+      "tags": [
+        "all",
+        "maxxsaver"
+      ],
+      "imageUrl": "",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#f8ecdf",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "p_rice_1",
+      "name": "Basmati Rice",
+      "category": "Rice & Pulses",
+      "qty": "5 kg",
+      "price": 429,
+      "mrp": 470,
+      "stock": 14,
+      "rating": "4.7",
+      "tags": [
+        "all",
+        "maxxsaver"
+      ],
+      "imageUrl": "",
+      "imageFit": "contain",
+      "imageScale": 0.9,
+      "color": "#e6f2e2",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "p_corn_1",
+      "name": "Ice cream",
+      "category": "Frozen Foods & Ice-creams",
+      "qty": "500 g",
+      "price": 76,
+      "mrp": 86,
+      "stock": 9,
+      "rating": "4.3",
+      "tags": [
+        "all",
+        "fresh"
+      ],
+      "imageUrl": "/assets/products/p2.jpg",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#ece3f8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "p_biscuit_1",
+      "name": "Digestive Biscuits",
+      "category": "Snacks & Namkeen",
+      "qty": "960 g",
+      "price": 129,
+      "mrp": 198,
+      "stock": 40,
+      "rating": "4.5",
+      "tags": [
+        "all",
+        "ramzan"
+      ],
+      "imageUrl": "/assets/products/p3.jpg",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#f8e8e8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "p_juice_1",
+      "name": "Orange Juice",
+      "category": "Beverages",
+      "qty": "1 L",
+      "price": 110,
+      "mrp": 130,
+      "stock": 55,
+      "rating": "4.4",
+      "tags": [
+        "all",
+        "summer"
+      ],
+      "imageUrl": "/assets/products/p4.jpg",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#e9eef8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "p_oil_1",
+      "name": "Sunflower Oil",
+      "category": "Cooking Oil & Spices",
+      "qty": "1 L",
+      "price": 169,
+      "mrp": 189,
+      "stock": 30,
+      "rating": "4.2",
+      "tags": [
+        "all"
+      ],
+      "imageUrl": "/assets/products/p5.jpg",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#f8ecdf",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "p_pasta_1",
+      "name": "Ready to eat",
+      "category": "Packaged Foods & Instant Meals",
+      "qty": "350 g",
+      "price": 94,
+      "mrp": 120,
+      "stock": 61,
+      "rating": "4.2",
+      "tags": [
+        "all",
+        "maxxsaver"
+      ],
+      "imageUrl": "/assets/products/p1.jpg",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#e6f2e2",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "p_cleaner_1",
+      "name": "Floor Cleaner",
+      "category": "Household Essentials",
+      "qty": "2 L",
+      "price": 179,
+      "mrp": 220,
+      "stock": 26,
+      "rating": "4.4",
+      "tags": [
+        "all"
+      ],
+      "imageUrl": "/assets/products/p2.jpg",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#ece3f8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "p_shampoo_1",
+      "name": "Smooth Shampoo",
+      "category": "Personal Care & Hygiene",
+      "qty": "340 ml",
+      "price": 229,
+      "mrp": 280,
+      "stock": 48,
+      "rating": "4.4",
+      "tags": [
+        "all"
+      ],
+      "imageUrl": "/assets/products/p3.jpg",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#f8e8e8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "p_meds_1",
+      "name": "Pain Relief Tablets",
+      "category": "Medicines & Health Supplies",
+      "qty": "1 strip",
+      "price": 48,
+      "mrp": 60,
+      "stock": 73,
+      "rating": "4.3",
+      "tags": [
+        "all"
+      ],
+      "imageUrl": "/assets/products/p4.jpg",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#e9eef8",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "p_pet_1",
+      "name": "Dog Food Adult",
+      "category": "Pet Supplies",
+      "qty": "1 kg",
+      "price": 299,
+      "mrp": 340,
+      "stock": 17,
+      "rating": "4.5",
+      "tags": [
+        "all"
+      ],
+      "imageUrl": "",
+      "imageFit": "cover",
+      "imageScale": 1,
+      "color": "#f8ecdf",
+      "status": "ACTIVE"
+    }
+  ],
+  "quickCategories": [
+    {
+      "id": "qc_1",
+      "name": "Fruits",
+      "category": "Fruits & Vegetables",
+      "color": "#e9eef8"
+    },
+    {
+      "id": "qc_2",
+      "name": "Dairy",
+      "category": "Dairy & Eggs",
+      "color": "#f8ecdf"
+    },
+    {
+      "id": "qc_3",
+      "name": "Breads",
+      "category": "Bakery & Breads",
+      "color": "#e6f2e2"
+    },
+    {
+      "id": "qc_4",
+      "name": "Snacks",
+      "category": "Snacks & Namkeen",
+      "color": "#ece3f8"
+    },
+    {
+      "id": "qc_5",
+      "name": "Drinks",
+      "category": "Beverages",
+      "color": "#f8e8e8"
+    },
+    {
+      "id": "qc_6",
+      "name": "Frozen",
+      "category": "Frozen Foods & Ice-creams",
+      "color": "#e9eef8"
+    },
+    {
+      "id": "qc_7",
+      "name": "Medicines",
+      "category": "Beverages",
+      "color": "#f8ecdf"
+    },
+    {
+      "id": "qc_8",
+      "name": "Pets",
+      "category": "Beverages",
+      "color": "#e6f2e2"
+    }
+  ],
+  "banners": [
+    {
+      "id": "bnr_1",
+      "title": "Limited Period Offer",
+      "subtitle": "Up to 80% off on groceries",
+      "cta": "Use code FREZO60",
+      "code": "FREZO60",
+      "bgColor": "#daf6df",
+      "textColor": "#0d6a2c"
+    },
+    {
+      "id": "bnr_2",
+      "title": "Fresh Fest",
+      "subtitle": "Farm fresh picks delivered fast",
+      "cta": "Extra 15% off on produce",
+      "code": "FRESH15",
+      "bgColor": "#e9f5ff",
+      "textColor": "#17446d"
+    },
+    {
+      "id": "bnr_3",
+      "title": "Home Essentials",
+      "subtitle": "Stock up and save more",
+      "cta": "Flat Rs 80 off above Rs 799",
+      "code": "HOME80",
+      "bgColor": "#fff4de",
+      "textColor": "#6e4a09"
+    }
+  ],
+  "homeSections": [
+    {
+      "id": "section_1_pre_2",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Dairy & Eggs",
+      "category": "Dairy & Eggs",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "section_1_pre_1",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Fruits & Vegetables",
+      "category": "Fruits & Vegetables",
+      "bannerId": "",
+      "limit": 7
+    },
+    {
+      "id": "section_1_pre_3",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Bakery & Breads",
+      "category": "Bakery & Breads",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "section_1_banner",
+      "type": "BANNER",
+      "layout": "HORIZONTAL",
+      "title": "Limited Period Offer",
+      "category": "",
+      "bannerId": "bnr_1",
+      "limit": 0
+    },
+    {
+      "id": "section_1_post_1",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Staples & Grains",
+      "category": "Staples & Grains",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "section_1_post_2",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Rice & Pulses",
+      "category": "Rice & Pulses",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "section_1_post_3",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Cooking Oil & Spices",
+      "category": "Cooking Oil & Spices",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "section_2_pre_1",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Snacks & Namkeen",
+      "category": "Snacks & Namkeen",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "section_2_pre_2",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Beverages",
+      "category": "Beverages",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "section_2_pre_3",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Packaged Foods & Instant Meals",
+      "category": "Packaged Foods & Instant Meals",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "section_2_banner",
+      "type": "BANNER",
+      "layout": "HORIZONTAL",
+      "title": "Fresh Fest",
+      "category": "",
+      "bannerId": "bnr_2",
+      "limit": 0
+    },
+    {
+      "id": "section_2_post_1",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Frozen Foods & Ice-creams",
+      "category": "Frozen Foods & Ice-creams",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "section_2_post_2",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Household Essentials",
+      "category": "Household Essentials",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "section_2_post_3",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Personal Care & Hygiene",
+      "category": "Personal Care & Hygiene",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "section_3_pre_1",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Beauty & Grooming",
+      "category": "Beauty & Grooming",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "section_3_pre_2",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Baby Care Products",
+      "category": "Baby Care Products",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "section_3_banner",
+      "type": "BANNER",
+      "layout": "HORIZONTAL",
+      "title": "Home Essentials",
+      "category": "",
+      "bannerId": "bnr_3",
+      "limit": 0
+    },
+    {
+      "id": "section_3_post_1",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "Supplements & Nutrition",
+      "category": "Supplements & Nutrition",
+      "bannerId": "",
+      "limit": 6
+    },
+    {
+      "id": "sec_2787618",
+      "type": "PRODUCT_GRID",
+      "layout": "HORIZONTAL",
+      "title": "flower & gifts",
+      "category": "flower & gifts",
+      "bannerId": "",
+      "limit": 6
+    }
+  ],
+  "recentlyViewedProductIds": [
+    "p_milk_1",
+    "p_banana_1",
+    "p_rice_1",
+    "p_corn_1",
+    "p_biscuit_1",
+    "p_juice_1",
+    "p_oil_1",
+    "p_pasta_1"
+  ],
+  "reorder": [
+    {
+      "id": "r_1",
+      "label": "Friday Basket",
+      "date": "Mar 1",
+      "productIds": [
+        "p_milk_1",
+        "p_banana_1"
+      ]
+    },
+    {
+      "id": "r_2",
+      "label": "Monthly Needs",
+      "date": "Feb 27",
+      "productIds": [
+        "p_rice_1",
+        "p_oil_1",
+        "p_pasta_1"
+      ]
+    }
+  ],
+  "invoices": [
+    {
+      "id": "INV-2014",
+      "amount": 564,
+      "date": "Mar 1"
+    },
+    {
+      "id": "INV-1987",
+      "amount": 1024,
+      "date": "Feb 24"
+    },
+    {
+      "id": "INV-1901",
+      "amount": 386,
+      "date": "Feb 20"
+    }
+  ],
+  "orders": [
+    {
+      "id": "O-501",
+      "user": "Aarav",
+      "city": "Bangalore",
+      "amount": 386,
+      "payment": "UPI",
+      "status": "DELIVERED",
+      "createdAt": "2026-03-01T09:30:00.000Z"
+    },
+    {
+      "id": "O-502",
+      "user": "Isha",
+      "city": "Hyderabad",
+      "amount": 564,
+      "payment": "CARD",
+      "status": "DELIVERED",
+      "createdAt": "2026-03-01T10:05:00.000Z"
+    },
+    {
+      "id": "O-503",
+      "user": "Kabir",
+      "city": "Pune",
+      "amount": 224,
+      "payment": "COD",
+      "status": "PACKING",
+      "createdAt": "2026-03-01T10:15:00.000Z"
+    },
+    {
+      "id": "O-504",
+      "user": "Nisha",
+      "city": "Chennai",
+      "amount": 942,
+      "payment": "UPI",
+      "status": "PLACED",
+      "createdAt": "2026-03-01T10:40:00.000Z"
+    },
+    {
+      "id": "O-505",
+      "user": "Rudra",
+      "city": "Delhi",
+      "amount": 188,
+      "payment": "UPI",
+      "status": "CANCELLED",
+      "createdAt": "2026-03-01T11:00:00.000Z"
+    }
+  ],
+  "coupons": [
+    {
+      "id": "C-1",
+      "code": "FREZO50",
+      "type": "FLAT",
+      "value": 50,
+      "minCart": 299,
+      "active": true
+    },
+    {
+      "id": "C-2",
+      "code": "FAST10",
+      "type": "PERCENT",
+      "value": 10,
+      "minCart": 199,
+      "active": true
+    }
+  ],
+  "users": [
+    {
+      "id": "U-1",
+      "name": "Aarav Sharma",
+      "email": "aarav@example.com",
+      "phone": "+91 9900112233",
+      "city": "Bangalore",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "U-2",
+      "name": "Isha Verma",
+      "email": "isha@example.com",
+      "phone": "+91 9911223344",
+      "city": "Hyderabad",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "U-3",
+      "name": "Kabir Khan",
+      "email": "kabir@example.com",
+      "phone": "+91 9922334455",
+      "city": "Pune",
+      "status": "ACTIVE"
+    }
+  ],
+  "logs": [
+    {
+      "id": "L-1772786741999",
+      "text": "2:15:41 PM - Product updated: MTR Coconut Chutney"
+    },
+    {
+      "id": "L-1772786179234",
+      "text": "2:06:19 PM - Product updated: Farm Fresh Banana"
+    },
+    {
+      "id": "L-1772786174592",
+      "text": "2:06:14 PM - Product updated: Amul Taaza Milk"
+    },
+    {
+      "id": "L-1772786170199",
+      "text": "2:06:10 PM - Product updated: bread"
+    },
+    {
+      "id": "L-1772786166869",
+      "text": "2:06:06 PM - Product updated: Lay's"
+    },
+    {
+      "id": "L-1772786158260",
+      "text": "2:05:58 PM - Product updated: Pain Relief Tablets"
+    },
+    {
+      "id": "L-1772786157489",
+      "text": "2:05:57 PM - Product updated: Dog Food Adult"
+    },
+    {
+      "id": "L-1772786117638",
+      "text": "2:05:17 PM - Product updated: grapes"
+    },
+    {
+      "id": "L-1772786113288",
+      "text": "2:05:13 PM - Product updated: Instant poha"
+    },
+    {
+      "id": "L-1772786109330",
+      "text": "2:05:09 PM - Product updated: MTR Ready to Eat Pongal"
+    },
+    {
+      "id": "L-1772786105153",
+      "text": "2:05:05 PM - Product updated: MTR Ready to Eat Pongal"
+    },
+    {
+      "id": "L-1772786104285",
+      "text": "2:05:04 PM - Product updated: MTR Ready to Eat Dal Makhani"
+    },
+    {
+      "id": "L-1772786097968",
+      "text": "2:04:57 PM - Product updated: MTR Ready to Eat Chana Masala"
+    },
+    {
+      "id": "L-1772786093825",
+      "text": "2:04:53 PM - Product updated: MTR Coconut Chutney"
+    },
+    {
+      "id": "L-1772735191377",
+      "text": "11:56:31 PM - Product added: MTR Ready to Eat Chana Masala"
+    },
+    {
+      "id": "L-1772735078079",
+      "text": "11:54:38 PM - Product added: MTR Ready to Eat Dal Makhani"
+    },
+    {
+      "id": "L-1772734922498",
+      "text": "11:52:02 PM - Product added: MTR Ready to Eat Pongal"
+    },
+    {
+      "id": "L-1772734766360",
+      "text": "11:49:26 PM - Product added: Instant poha"
+    },
+    {
+      "id": "L-1772734433345",
+      "text": "11:43:53 PM - Product updated: Ready to eat"
+    },
+    {
+      "id": "L-1772734341562",
+      "text": "11:42:21 PM - Product updated: Ready to eat"
+    },
+    {
+      "id": "L-1772733998890",
+      "text": "11:36:38 PM - Product added: grapes"
+    },
+    {
+      "id": "L-1772733965786",
+      "text": "11:36:05 PM - Image resized: 400x400 (cover)"
+    },
+    {
+      "id": "L-1772733825918",
+      "text": "11:33:45 PM - Category reordered: Fruits & Vegetables"
+    },
+    {
+      "id": "L-1772733824236",
+      "text": "11:33:44 PM - Category reordered: Fruits & Vegetables"
+    },
+    {
+      "id": "L-1772733822122",
+      "text": "11:33:42 PM - Category reordered: Fruits & Vegetables"
+    },
+    {
+      "id": "L-1772733818498",
+      "text": "11:33:38 PM - Category reordered: Fruits & Vegetables"
+    },
+    {
+      "id": "L-1772733738420",
+      "text": "11:32:18 PM - Product updated: Lay's"
+    },
+    {
+      "id": "L-1772719516285",
+      "text": "7:35:16 PM - Product updated: Lay's"
+    },
+    {
+      "id": "L-1772719515039",
+      "text": "7:35:15 PM - Product updated: Lay's"
+    },
+    {
+      "id": "L-1772719490852",
+      "text": "7:34:50 PM - Product updated: Lay's"
+    }
+  ]
+}

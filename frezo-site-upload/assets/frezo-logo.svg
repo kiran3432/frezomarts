@@ -1,0 +1,15 @@
+<svg width="160" height="60" viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frezo logo">
+  <rect x="0" y="0" width="160" height="60" rx="12" fill="#029c2a"/>
+  <text
+    x="80"
+    y="39"
+    text-anchor="middle"
+    fill="#ffffff"
+    font-family="Manrope, Arial, sans-serif"
+    font-size="34"
+    font-weight="800"
+    letter-spacing="1"
+  >
+    FREZO
+  </text>
+</svg>

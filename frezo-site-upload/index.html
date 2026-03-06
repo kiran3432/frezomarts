@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FREZO Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260306-2" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="top-nav-inner">
+        <button id="brandBtn" class="brand-block">
+          <img src="./assets/frezo-logo.svg" alt="Frezo logo" class="brand-logo" />
+        </button>
+
+        <div class="delivery-block">
+          <p id="deliveryEta" class="delivery-title">Delivery in 8 minutes</p>
+          <p id="deliveryAddress" class="delivery-address">Detecting location...</p>
+        </div>
+
+        <label class="search-block">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="text" placeholder='Search "milk"' />
+        </label>
+
+        <div class="user-menu-wrap">
+          <button id="loginBtn" class="login-btn">Login</button>
+          <button id="userMenuToggle" class="user-menu-toggle hidden" type="button" aria-label="Open account menu">▾</button>
+          <div id="userMenu" class="user-menu hidden">
+            <button type="button" data-user-menu-action="orders">My Orders</button>
+            <button type="button" data-user-menu-action="addresses">Saved Addresses</button>
+            <button type="button" data-user-menu-action="privacy">Account Privacy</button>
+            <button type="button" data-user-menu-action="faqs">FAQs</button>
+            <button type="button" data-user-menu-action="logout">Logout</button>
+          </div>
+        </div>
+
+        <button id="cartBtn" class="cart-btn">
+          <span class="cart-icon">🛒</span>
+          <span id="cartBtnLabel">My Cart</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="backend-row hidden">
+        <label>
+          Studio Backend
+          <input id="backendInput" value="http://10.108.131.248:4000" />
+        </label>
+        <button id="connectBtn" class="plain-btn">Connect</button>
+        <button id="refreshBtn" class="plain-btn">Refresh</button>
+      </section>
+
+      <section id="homeView" class="view active">
+        <section id="bannerStrip" class="banner-strip"></section>
+        <section id="categoryStrip" class="category-strip"></section>
+        <section id="homeSections" class="home-sections"></section>
+      </section>
+
+      <section id="categoryView" class="view">
+        <div class="category-header">
+          <button id="backHomeBtn" class="plain-btn">← Home</button>
+          <h2 id="categoryTitle">Category</h2>
+        </div>
+
+        <div class="category-layout">
+          <aside id="subCategoryList" class="sub-categories"></aside>
+          <section class="category-content">
+            <div id="categoryGrid" class="category-grid"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <div id="cartDrawer" class="drawer hidden">
+      <div class="drawer-panel">
+        <div class="drawer-head">
+          <h3>My Cart</h3>
+          <button id="closeCartBtn" class="plain-btn">Close</button>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div id="cartSummary" class="cart-summary"></div>
+      </div>
+    </div>
+
+    <button id="floatingCart" class="floating-cart hidden" aria-label="Open cart">
+      <span class="cart-icon">🛒</span>
+      <span id="floatingCartLabel">Cart · ₹0</span>
+    </button>
+
+    <div id="authModal" class="auth-modal hidden">
+      <div class="auth-card">
+        <button id="authCloseBtn" class="auth-close-btn" type="button">✕</button>
+        <h3>Welcome to FREZO</h3>
+        <p>Login or sign up with mobile number or Google.</p>
+
+        <div class="auth-tabs">
+          <button id="authLoginTab" class="auth-tab active" type="button">Login</button>
+          <button id="authSignupTab" class="auth-tab" type="button">Signup</button>
+        </div>
+
+        <form id="authForm" class="auth-form">
+          <label id="authNameRow" class="hidden" for="authNameInput">
+            Full Name
+            <input id="authNameInput" type="text" placeholder="Enter your name" autocomplete="name" />
+          </label>
+          <label for="authMobileInput">
+            Mobile Number
+            <input id="authMobileInput" type="tel" placeholder="10-digit mobile number" inputmode="numeric" autocomplete="tel" />
+          </label>
+          <button id="authSubmitBtn" type="submit">Continue</button>
+        </form>
+
+        <div class="auth-divider"><span>or</span></div>
+        <button id="authGoogleBtn" class="auth-google-btn" type="button">Continue with Google</button>
+      </div>
+    </div>
+
+    <div id="accountDrawer" class="drawer hidden">
+      <div class="drawer-panel account-panel">
+        <div class="drawer-head">
+          <h3 id="accountTitle">My Account</h3>
+          <button id="closeAccountBtn" class="plain-btn">Close</button>
+        </div>
+        <div id="accountContent" class="account-content"></div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script type="module" src="./main.js?v=20260306-8"></script>
+  </body>
+</html>
