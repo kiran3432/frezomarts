@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frezo Studio</title>
+    <link rel="stylesheet" href="./styles.css?v=20260306-3" />
+  </head>
+  <body>
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+
+    <div class="app-shell">
+      <aside class="sidebar glass">
+        <div class="brand glass-inner">
+          <p class="brand-tag">Quick Commerce Studio</p>
+          <h1>FREZO Admin</h1>
+          <p class="brand-sub">Edit app content and layout in real time.</p>
+        </div>
+
+        <nav class="nav" id="mainNav">
+          <a class="nav-link" data-view="home" href="?view=home">Home</a>
+          <a class="nav-link" data-view="dashboard" href="?view=dashboard">Dashboard</a>
+          <a class="nav-link" data-view="products" href="?view=products">Products</a>
+          <a class="nav-link" data-view="categories" href="?view=categories">Categories</a>
+          <a class="nav-link" data-view="studio" href="?view=studio">Studio Layout</a>
+          <a class="nav-link" data-view="orders" href="?view=orders">Orders</a>
+          <a class="nav-link" data-view="coupons" href="?view=coupons">Coupons</a>
+          <a class="nav-link" data-view="users" href="?view=users">Users</a>
+        </nav>
+
+        <section class="panel compact glass-inner">
+          <h3>System Notes</h3>
+          <ul id="logList" class="list compact-list"></ul>
+        </section>
+      </aside>
+
+      <main class="content">
+        <header class="topbar panel glass">
+          <div>
+            <h2 id="viewTitle">Studio Home</h2>
+            <p id="viewSubtitle">Switch modules instantly without page reload</p>
+            <p id="syncStatus" class="sync-status">Connecting...</p>
+          </div>
+
+          <div class="topbar-actions-block">
+            <div class="api-connect">
+              <input id="apiBaseInput" placeholder="http://10.108.131.248:4000" />
+              <button id="connectBtn" class="secondary">Connect</button>
+            </div>
+            <div class="topbar-actions">
+              <button id="seedBtn" class="secondary">Reset Server Data</button>
+              <button id="exportBtn" class="secondary">Export JSON</button>
+            </div>
+          </div>
+        </header>
+
+        <section id="homeView" class="view active">
+          <article class="panel glass module-launcher">
+            <h3>Studio Modules</h3>
+            <p class="muted">Modules open inside Studio instantly. Use Ctrl/Cmd+click to open in a new tab.</p>
+            <div class="launcher-grid">
+              <a class="launcher-card" data-view="dashboard" href="?view=dashboard">
+                <h4>Dashboard</h4>
+                <p>Ops KPIs, stock alerts and revenue snapshots.</p>
+              </a>
+              <a class="launcher-card" data-view="products" href="?view=products">
+                <h4>Products</h4>
+                <p>Manage products, images, image resize and pricing.</p>
+              </a>
+              <a class="launcher-card" data-view="categories" href="?view=categories">
+                <h4>Categories</h4>
+                <p>Maintain category taxonomy used by app screens.</p>
+              </a>
+              <a class="launcher-card" data-view="studio" href="?view=studio">
+                <h4>Studio Layout</h4>
+                <p>Create horizontal or vertical home containers and banners.</p>
+              </a>
+              <a class="launcher-card" data-view="orders" href="?view=orders">
+                <h4>Orders</h4>
+                <p>Track and update order lifecycle status.</p>
+              </a>
+              <a class="launcher-card" data-view="coupons" href="?view=coupons">
+                <h4>Coupons</h4>
+                <p>Create and toggle discounts used in app checkout.</p>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <section id="dashboardView" class="view">
+          <div class="kpi-grid">
+            <article class="panel kpi glass"><h4>Total Products</h4><p id="kpiProducts">0</p></article>
+            <article class="panel kpi glass"><h4>Low Stock</h4><p id="kpiLowStock">0</p></article>
+            <article class="panel kpi glass"><h4>Active Orders</h4><p id="kpiActiveOrders">0</p></article>
+            <article class="panel kpi glass"><h4>Today Revenue</h4><p id="kpiRevenue">Rs 0</p></article>
+          </div>
+
+          <div class="double-grid">
+            <article class="panel glass">
+              <h3>Order Status Mix</h3>
+              <div id="statusBars" class="bars"></div>
+            </article>
+
+            <article class="panel glass">
+              <h3>Stock Alerts</h3>
+              <ul id="stockAlerts" class="list"></ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="productsView" class="view">
+          <article class="panel glass">
+            <h3>Add Product</h3>
+            <form id="productForm" class="form-grid">
+              <label>Product Name<input id="productName" required /></label>
+              <label>Category<input id="productCategory" required /></label>
+              <label>Quantity (e.g. 1 L)<input id="productQty" required /></label>
+              <label>Price (Rs)<input id="productPrice" type="number" min="1" required /></label>
+              <label>MRP (Rs)<input id="productMrp" type="number" min="1" required /></label>
+              <label>Stock<input id="productStock" type="number" min="0" required /></label>
+              <label>Rating<input id="productRating" value="4.5" required /></label>
+              <label>Tags (comma separated)<input id="productTags" placeholder="all,fresh" /></label>
+              <label>Image URL<input id="productImage" placeholder="https://..." /></label>
+              <label>Image Fit
+                <select id="productImageFit">
+                  <option value="cover">cover</option>
+                  <option value="contain">contain</option>
+                </select>
+              </label>
+              <label>Image Scale
+                <input id="productImageScale" type="number" min="0.5" max="2" step="0.1" value="1" />
+              </label>
+              <label>Color<input id="productColor" value="#e9eef8" /></label>
+              <label>Status
+                <select id="productStatus">
+                  <option value="ACTIVE">ACTIVE</option>
+                  <option value="INACTIVE">INACTIVE</option>
+                </select>
+              </label>
+              <button type="submit">Add Product</button>
+            </form>
+          </article>
+
+          <article class="panel glass">
+            <h3>Image Resizer</h3>
+            <form id="imageResizerForm" class="form-grid">
+              <label>Source URL<input id="resizeSource" placeholder="https://..." required /></label>
+              <label>Width (px)<input id="resizeWidth" type="number" min="50" value="400" /></label>
+              <label>Height (px)<input id="resizeHeight" type="number" min="50" value="400" /></label>
+              <label>Fit
+                <select id="resizeFit">
+                  <option value="cover">cover</option>
+                  <option value="contain">contain</option>
+                </select>
+              </label>
+              <button type="submit">Generate URL</button>
+            </form>
+            <div class="resizer-output">
+              <input id="resizeOutput" readonly placeholder="Generated URL" />
+              <img id="resizePreview" class="resizer-preview" alt="Preview" />
+            </div>
+          </article>
+
+          <article class="panel glass">
+            <div class="section-head">
+              <h3>Products</h3>
+              <div class="actions-row">
+                <input id="productSearch" placeholder="Search product/category" />
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Preview</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>MRP</th>
+                    <th>Stock</th>
+                    <th>Rating</th>
+                    <th>Tags</th>
+                    <th>Image URL</th>
+                    <th>Fit</th>
+                    <th>Scale</th>
+                    <th>Color</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="productsTableBody"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section id="categoriesView" class="view">
+          <article class="panel glass">
+            <h3>Add Category</h3>
+            <form id="categoryForm" class="inline-form">
+              <input id="categoryName" placeholder="e.g. Frozen Foods & Ice-creams" required />
+              <button type="submit">Add Category</button>
+            </form>
+          </article>
+
+          <article class="panel glass">
+            <h3>Category Catalog</h3>
+            <div id="categoriesGrid" class="chip-grid"></div>
+          </article>
+        </section>
+
+        <section id="studioView" class="view">
+          <article class="panel glass">
+            <h3>App Header</h3>
+            <form id="appMetaForm" class="form-grid">
+              <label>App Name<input id="appName" required /></label>
+              <label>Subtitle<input id="appSubtitle" required /></label>
+              <label>Tagline<input id="appTagline" required /></label>
+              <label>Base ETA (minutes)<input id="etaBase" type="number" min="1" max="60" required /></label>
+              <button type="submit">Save Header</button>
+            </form>
+          </article>
+
+          <article class="panel glass">
+            <h3>Add Promotion Banner</h3>
+            <form id="bannerForm" class="form-grid">
+              <label>Title<input id="bannerTitle" required /></label>
+              <label>Subtitle<input id="bannerSubtitle" required /></label>
+              <label>CTA<input id="bannerCta" required /></label>
+              <label>Coupon Code<input id="bannerCode" /></label>
+              <label>Background Color<input id="bannerBg" value="#daf6df" required /></label>
+              <label>Text Color<input id="bannerText" value="#0d6a2c" required /></label>
+              <button type="submit">Add Banner</button>
+            </form>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Banner</th>
+                    <th>Colors</th>
+                    <th>Code</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="bannersTableBody"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel glass">
+            <h3>Add Home Container Section</h3>
+            <form id="sectionForm" class="form-grid">
+              <label>Type
+                <select id="sectionType">
+                  <option value="PRODUCT_GRID">PRODUCT_GRID</option>
+                  <option value="BANNER">BANNER</option>
+                </select>
+              </label>
+              <label>Container Layout
+                <select id="sectionLayout">
+                  <option value="HORIZONTAL">HORIZONTAL</option>
+                  <option value="VERTICAL">VERTICAL</option>
+                </select>
+              </label>
+              <label>Section Title<input id="sectionTitle" placeholder="Popular right now" /></label>
+              <label>Category (for PRODUCT_GRID)<input id="sectionCategory" placeholder="Dairy & Eggs" /></label>
+              <label>Banner Id (for BANNER)<input id="sectionBannerId" placeholder="bnr_1" /></label>
+              <label>Item Limit<input id="sectionLimit" type="number" min="1" max="24" value="6" /></label>
+              <button type="submit">Add Section</button>
+            </form>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Layout</th>
+                    <th>Title</th>
+                    <th>Category / Banner</th>
+                    <th>Limit</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="sectionsTableBody"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section id="ordersView" class="view">
+          <article class="panel glass">
+            <div class="section-head">
+              <h3>Orders</h3>
+              <div class="actions-row">
+                <select id="orderFilter">
+                  <option value="ALL">ALL</option>
+                  <option value="PLACED">PLACED</option>
+                  <option value="PACKING">PACKING</option>
+                  <option value="OUT_FOR_DELIVERY">OUT_FOR_DELIVERY</option>
+                  <option value="DELIVERED">DELIVERED</option>
+                  <option value="CANCELLED">CANCELLED</option>
+                </select>
+                <input id="orderSearch" placeholder="Search order/user/city" />
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>User</th>
+                    <th>Amount</th>
+                    <th>Payment</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                  </tr>
+                </thead>
+                <tbody id="ordersTableBody"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section id="couponsView" class="view">
+          <article class="panel glass">
+            <h3>Create Coupon</h3>
+            <form id="couponForm" class="form-grid">
+              <label>Code<input id="couponCode" required /></label>
+              <label>Type
+                <select id="couponType">
+                  <option value="FLAT">FLAT</option>
+                  <option value="PERCENT">PERCENT</option>
+                </select>
+              </label>
+              <label>Value<input id="couponValue" type="number" min="1" required /></label>
+              <label>Min Cart (Rs)<input id="couponMinCart" type="number" min="0" required /></label>
+              <button type="submit">Add Coupon</button>
+            </form>
+          </article>
+
+          <article class="panel glass">
+            <h3>Coupons</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Code</th>
+                    <th>Rule</th>
+                    <th>Min Cart</th>
+                    <th>Status</th>
+                    <th>Toggle</th>
+                  </tr>
+                </thead>
+                <tbody id="couponsTableBody"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section id="usersView" class="view">
+          <article class="panel glass">
+            <h3>Users</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="usersTableBody"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./main.js?v=20260306-5"></script>
+  </body>
+</html>

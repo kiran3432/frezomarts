@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: frezo-backend
+    runtime: node
+    rootDir: apps/backend
+    plan: free
+    region: singapore
+    autoDeploy: true
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: JWT_SECRET
+        sync: false
+      - key: CORS_ORIGIN
+        value: https://frezomarts.com,https://www.frezomarts.com,https://studio.frezomarts.com,http://10.108.131.248:8082,http://127.0.0.1:8082

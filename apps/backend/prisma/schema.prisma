@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum RideStatus {
+  REQUESTED
+  DRIVER_ASSIGNED
+  DRIVER_ARRIVING
+  STARTED
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+}
+
+enum PaymentMethod {
+  CASH
+  UPI
+  CARD
+}
+
+enum PayoutStatus {
+  PENDING
+  SETTLED
+}
+
+model User {
+  id          String   @id @default(cuid())
+  phoneNumber String   @unique
+  role        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Captain {
+  id          String   @id
+  name        String
+  currentLat  Float
+  currentLng  Float
+  isOnline    Boolean  @default(true)
+  isAvailable Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  payouts     CaptainPayout[]
+
+  @@index([isOnline, isAvailable])
+}
+
+model Ride {
+  id            String     @id @default(cuid())
+  riderId       String
+  captainId     String?
+  pickupLat     Float
+  pickupLng     Float
+  dropLat       Float
+  dropLng       Float
+  estimatedFare Float
+  finalFare     Float?
+  cancelReason  String?
+  surgeMultiplier Float @default(1)
+  surgeLabel    String?
+  paymentStatus PaymentStatus @default(PENDING)
+  paymentMethod PaymentMethod?
+  paymentCollectedAt DateTime?
+  status        RideStatus @default(REQUESTED)
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  @@index([captainId])
+  @@index([status, createdAt])
+  @@index([paymentStatus, createdAt])
+}
+
+model CaptainPayout {
+  id          String      @id @default(cuid())
+  captainId   String
+  rideId      String      @unique
+  grossAmount Float
+  commission  Float
+  netAmount   Float
+  status      PayoutStatus @default(PENDING)
+  settledAt   DateTime?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  captain Captain @relation(fields: [captainId], references: [id], onDelete: Cascade)
+
+  @@index([captainId, status, createdAt])
+}
+
+model AuditLog {
+  id          String   @id @default(cuid())
+  actorUserId String?
+  actorRole   String?
+  action      String
+  resourceType String
+  resourceId  String?
+  status      String
+  ip          String?
+  userAgent   String?
+  metadata    Json?
+  createdAt   DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([actorRole, createdAt])
+  @@index([action, createdAt])
+}

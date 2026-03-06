@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Captain App MVP</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="brand">
+        <p class="brand-tag">Captain Mode</p>
+        <h1>Captain Console</h1>
+        <p class="brand-sub">Accept, start, and complete trips with live status sync.</p>
+      </section>
+
+      <section class="card">
+        <h2>Session & Fleet</h2>
+        <p class="sub">Assign rides and progress trip statuses.</p>
+        <label>
+          Backend URL
+          <input id="backendUrl" value="http://localhost:4000" />
+        </label>
+        <div class="inline">
+          <label>
+            Phone Number
+            <input id="phoneNumber" value="+919900112244" />
+          </label>
+          <label>
+            OTP
+            <input id="otp" value="123456" />
+          </label>
+        </div>
+        <div class="actions">
+          <button id="requestOtpBtn" class="secondary">Request OTP</button>
+          <button id="loginBtn">Login</button>
+        </div>
+        <div class="inline">
+          <label>
+            Captain ID
+            <select id="captainId"></select>
+          </label>
+          <div class="actions">
+            <button id="refreshCaptainsBtn" class="secondary">Refresh Captains</button>
+            <button id="simulateBtn">Start Simulation</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="title-row">
+          <h2>Ride Queue</h2>
+          <button id="refreshRidesBtn" class="secondary">Refresh Rides</button>
+        </div>
+        <div id="rideList" class="ride-list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Selected Ride</h2>
+        <p id="selectedRideLabel" class="pill">No ride selected</p>
+        <div id="captainMap" class="map"></div>
+        <div class="actions">
+          <button id="assignBtn">Assign to Captain</button>
+          <button id="arrivingBtn" class="secondary">Mark Arriving</button>
+          <button id="startBtn" class="secondary">Start Ride</button>
+          <button id="completeBtn" class="secondary">Complete Ride</button>
+        </div>
+        <pre id="rideJson" class="json-view">Select a ride from queue...</pre>
+      </section>
+
+      <section class="card">
+        <h2>Activity Log</h2>
+        <ul id="timeline" class="timeline"></ul>
+      </section>
+
+      <section class="card">
+        <div class="title-row">
+          <h2>Earnings</h2>
+          <button id="refreshPayoutBtn" class="secondary">Refresh Earnings</button>
+        </div>
+        <div class="grid-2">
+          <p class="pill">Pending: <span id="pendingNet">0</span></p>
+          <p class="pill">Settled: <span id="settledNet">0</span></p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="title-row">
+          <h2>Trip History</h2>
+          <div class="actions">
+            <select id="historyStatusFilter">
+              <option value="">All Status</option>
+              <option value="COMPLETED">COMPLETED</option>
+              <option value="CANCELLED">CANCELLED</option>
+              <option value="STARTED">STARTED</option>
+            </select>
+            <select id="historyPaymentFilter">
+              <option value="">All Payments</option>
+              <option value="PAID">PAID</option>
+              <option value="PENDING">PENDING</option>
+            </select>
+            <button id="loadHistoryBtn" class="secondary">Load History</button>
+            <button id="exportHistoryBtn" class="secondary">Export CSV</button>
+          </div>
+        </div>
+        <div id="historyList" class="ride-list"></div>
+      </section>
+    </main>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

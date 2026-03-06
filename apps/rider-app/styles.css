@@ -1,0 +1,260 @@
+:root {
+  --bg: #f4f8ff;
+  --surface: #ffffff;
+  --surface-soft: #f7faff;
+  --line: #d7e1f0;
+  --line-strong: #c2d1e6;
+  --text: #12243b;
+  --muted: #5b6e87;
+  --brand: #ffd400;
+  --brand-ink: #1a1a1a;
+  --action-soft: #eaf1fb;
+  font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 90% 8%, #ffe88a 0%, transparent 24%),
+    radial-gradient(circle at 6% 94%, #dbe7ff 0%, transparent 30%),
+    linear-gradient(180deg, #fbfdff, var(--bg));
+}
+
+.page {
+  max-width: 1080px;
+  margin: 1.2rem auto 2rem;
+  padding: 0 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.brand,
+.card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 12px 30px #1c3f660f;
+}
+
+.brand {
+  padding: 1.12rem;
+  background: linear-gradient(118deg, #fff9d7, #ffffff);
+  border-color: #f0dd8e;
+}
+
+.brand-tag {
+  margin: 0 0 0.24rem;
+  color: #866300;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.brand-sub {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+}
+
+.card {
+  padding: 1.02rem;
+}
+
+h2 {
+  margin: 0 0 0.42rem;
+}
+
+.sub {
+  margin: 0.12rem 0 0.9rem;
+  color: var(--muted);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.78rem;
+  color: #23415f;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+input,
+select {
+  width: 100%;
+  margin-top: 0.34rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  padding: 0.72rem 0.78rem;
+  background: #fbfdff;
+  color: var(--text);
+}
+
+.search-shell {
+  position: relative;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  right: 0;
+  z-index: 30;
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px #1a3a600f;
+  max-height: 220px;
+  overflow-y: auto;
+  display: none;
+}
+
+.search-results.visible {
+  display: block;
+}
+
+.search-results li {
+  padding: 0.52rem 0.56rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #26435f;
+  cursor: pointer;
+}
+
+.search-results li:hover {
+  background: #edf4ff;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #d3e4ff;
+  border-color: #7da6de;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.72rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.58rem;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.72rem;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.64rem 1rem;
+  cursor: pointer;
+  background: var(--brand);
+  color: var(--brand-ink);
+  font-weight: 800;
+  box-shadow: 0 6px 14px #cba60022;
+}
+
+button.secondary {
+  background: var(--action-soft);
+  color: #1e4168;
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #efdc88;
+  background: #fff6cb;
+  color: #6f5600;
+  border-radius: 999px;
+  padding: 0.34rem 0.74rem;
+  font-weight: 800;
+}
+
+.map {
+  width: 100%;
+  height: 300px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  margin: 0.72rem 0;
+  overflow: hidden;
+}
+
+.json-view {
+  margin-top: 0.72rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f8fbff;
+  color: #183455;
+  padding: 0.86rem;
+  min-height: 120px;
+  overflow: auto;
+}
+
+.timeline {
+  margin: 0.28rem 0 0;
+  padding-left: 1rem;
+}
+
+.timeline li {
+  margin: 0.35rem 0;
+  color: #2a4562;
+}
+
+.history-list {
+  display: grid;
+  gap: 0.66rem;
+}
+
+.history-item {
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--surface-soft);
+  padding: 0.76rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+@media (max-width: 760px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .title-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .brand h1 {
+    font-size: 1.5rem;
+  }
+}

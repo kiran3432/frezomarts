@@ -1,0 +1,9 @@
+{
+  "expo": {
+    "name": "Captain App",
+    "slug": "captain-native",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light"
+  }
+}

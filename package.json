@@ -1,0 +1,18 @@
+{
+  "name": "rapido-clone-mvp",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:backend": "npm --workspace apps/backend run dev",
+    "build:backend": "npm --workspace apps/backend run build",
+    "typecheck:backend": "npm --workspace apps/backend run typecheck",
+    "test:backend": "npm --workspace apps/backend run test",
+    "dev:rider-native": "npm --workspace apps/rider-native run start",
+    "dev:captain-native": "npm --workspace apps/captain-native run start",
+    "dev:frezo-native": "npm --workspace apps/frezo-native run start",
+    "dev:admin-native": "npm --workspace apps/admin-native run start"
+  }
+}
