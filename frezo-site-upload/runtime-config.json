@@ -1,0 +1,4 @@
+{
+  "backendBase": "https://api.frezomarts.com",
+  "liveSyncIntervalMs": 4000
+}
