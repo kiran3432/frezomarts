@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frezo Studio</title>
-    <link rel="stylesheet" href="./styles.css?v=20260306-3" />
+    <link rel="stylesheet" href="./styles.css?v=20260308-6" />
   </head>
   <body>
     <div class="orb orb-a"></div>
@@ -51,7 +51,10 @@
             </div>
             <div class="topbar-actions">
               <button id="seedBtn" class="secondary">Reset Server Data</button>
+              <button id="exportCsvBtn" class="secondary">Export CSV</button>
+              <button id="importCsvBtn" class="secondary">Import CSV</button>
               <button id="exportBtn" class="secondary">Export JSON</button>
+              <input id="csvFileInput" type="file" accept=".csv,text/csv" hidden />
             </div>
           </div>
         </header>
@@ -122,7 +125,7 @@
               <label>Stock<input id="productStock" type="number" min="0" required /></label>
               <label>Rating<input id="productRating" value="4.5" required /></label>
               <label>Tags (comma separated)<input id="productTags" placeholder="all,fresh" /></label>
-              <label>Image URL<input id="productImage" placeholder="https://..." /></label>
+              <label>Image URL<input id="productImage" placeholder="https://... or asset://img_xxx" /></label>
               <label>Image Fit
                 <select id="productImageFit">
                   <option value="cover">cover</option>
@@ -146,7 +149,8 @@
           <article class="panel glass">
             <h3>Image Resizer</h3>
             <form id="imageResizerForm" class="form-grid">
-              <label>Source URL<input id="resizeSource" placeholder="https://..." required /></label>
+              <label>Source URL<input id="resizeSource" placeholder="https://..." /></label>
+              <label>Or Upload Image<input id="resizeFile" type="file" accept="image/*" /></label>
               <label>Width (px)<input id="resizeWidth" type="number" min="50" value="400" /></label>
               <label>Height (px)<input id="resizeHeight" type="number" min="50" value="400" /></label>
               <label>Fit
@@ -155,10 +159,25 @@
                   <option value="contain">contain</option>
                 </select>
               </label>
-              <button type="submit">Generate URL</button>
+              <label>Format
+                <select id="resizeFormat">
+                  <option value="image/webp">webp</option>
+                  <option value="image/jpeg">jpeg</option>
+                  <option value="image/png">png</option>
+                </select>
+              </label>
+              <label>Quality (0.1-1)
+                <input id="resizeQuality" type="number" min="0.1" max="1" step="0.1" value="0.9" />
+              </label>
+              <button type="submit">Generate Resized Image</button>
             </form>
             <div class="resizer-output">
-              <input id="resizeOutput" readonly placeholder="Generated URL" />
+              <input id="resizeOutput" readonly placeholder="Generated compact image ref (asset://...)" />
+              <div class="actions-row">
+                <button id="resizeCopyBtn" type="button" class="secondary">Copy URL</button>
+                <button id="resizeUseBtn" type="button" class="secondary">Use In Product Form</button>
+                <a id="resizeDownloadBtn" class="tiny secondary" href="#" download="frezo-product-image.webp">Download</a>
+              </div>
               <img id="resizePreview" class="resizer-preview" alt="Preview" />
             </div>
           </article>
@@ -170,10 +189,22 @@
                 <input id="productSearch" placeholder="Search product/category" />
               </div>
             </div>
+            <div class="bulk-actions" id="productBulkTop">
+              <label class="bulk-check">
+                <input id="productsSelectAllTop" type="checkbox" />
+                Select visible rows
+              </label>
+              <div class="actions-row">
+                <button id="productsBulkSaveTop" type="button" class="secondary" data-bulk-product-action="save">Save Selected</button>
+                <button id="productsBulkDeleteTop" type="button" class="secondary" data-bulk-product-action="delete">Delete Selected</button>
+              </div>
+              <p id="productsBulkCountTop" class="bulk-count">0 selected</p>
+            </div>
             <div class="table-wrap">
               <table>
                 <thead>
                   <tr>
+                    <th><input id="productsSelectAllHead" type="checkbox" aria-label="Select all visible products" /></th>
                     <th>Preview</th>
                     <th>Name</th>
                     <th>Category</th>
@@ -188,11 +219,21 @@
                     <th>Scale</th>
                     <th>Color</th>
                     <th>Status</th>
-                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody id="productsTableBody"></tbody>
               </table>
+            </div>
+            <div class="bulk-actions" id="productBulkBottom">
+              <label class="bulk-check">
+                <input id="productsSelectAllBottom" type="checkbox" />
+                Select visible rows
+              </label>
+              <div class="actions-row">
+                <button id="productsBulkSaveBottom" type="button" class="secondary" data-bulk-product-action="save">Save Selected</button>
+                <button id="productsBulkDeleteBottom" type="button" class="secondary" data-bulk-product-action="delete">Delete Selected</button>
+              </div>
+              <p id="productsBulkCountBottom" class="bulk-count">0 selected</p>
             </div>
           </article>
         </section>
@@ -208,6 +249,7 @@
 
           <article class="panel glass">
             <h3>Category Catalog</h3>
+            <p class="muted">Drag and drop category cards to change order.</p>
             <div id="categoriesGrid" class="chip-grid"></div>
           </article>
         </section>
@@ -384,6 +426,6 @@
       </main>
     </div>
 
-    <script type="module" src="./main.js?v=20260306-5"></script>
+    <script type="module" src="./main.js?v=20260308-6"></script>
   </body>
 </html>

@@ -111,6 +111,7 @@ const studioConfigSchema = z.object({
   updatedAt: z.string().trim().optional(),
   app: appMetaSchema,
   etaBaseMinutes: z.coerce.number().int().min(1).max(60).default(7),
+  imageAssets: z.record(z.string().trim()).default({}),
   categories: z.array(z.string().trim().min(1)).min(1),
   topFilters: z.array(topFilterSchema).min(1),
   products: z.array(productSchema).default([]),
@@ -126,7 +127,61 @@ const studioConfigSchema = z.object({
   logs: z.array(logSchema).default([])
 });
 
+const imageProxyQuerySchema = z.object({
+  url: z.string().trim().url()
+});
+
 export function registerStudioRoutes(app: FastifyInstance) {
+  app.get("/studio/image", async (request, reply) => {
+    const parsed = imageProxyQuerySchema.safeParse(request.query);
+    if (!parsed.success) {
+      return reply.status(400).send({ message: "Invalid image url" });
+    }
+
+    let targetUrl: URL;
+    try {
+      targetUrl = new URL(parsed.data.url);
+    } catch {
+      return reply.status(400).send({ message: "Invalid image url" });
+    }
+
+    if (!["http:", "https:"].includes(targetUrl.protocol)) {
+      return reply.status(400).send({ message: "Unsupported image protocol" });
+    }
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 15000);
+
+    try {
+      const upstream = await fetch(targetUrl.toString(), {
+        method: "GET",
+        redirect: "follow",
+        signal: controller.signal,
+        headers: {
+          "user-agent": "FrezoStudio/1.0",
+          accept: "image/avif,image/webp,image/apng,image/*,*/*;q=0.8"
+        }
+      });
+
+      if (!upstream.ok) {
+        return reply.status(upstream.status === 404 ? 404 : 502).send({ message: "Image fetch failed" });
+      }
+
+      const body = Buffer.from(await upstream.arrayBuffer());
+      const contentType = upstream.headers.get("content-type") || "application/octet-stream";
+      const upstreamCache = upstream.headers.get("cache-control");
+
+      reply.header("content-type", contentType);
+      reply.header("cache-control", upstreamCache || "public, max-age=86400");
+      return reply.send(body);
+    } catch (error) {
+      const isTimeout = error instanceof Error && error.name === "AbortError";
+      return reply.status(isTimeout ? 504 : 502).send({ message: isTimeout ? "Image fetch timed out" : "Image fetch failed" });
+    } finally {
+      clearTimeout(timer);
+    }
+  });
+
   app.get("/studio/config", async () => {
     return studioService.getConfig();
   });
